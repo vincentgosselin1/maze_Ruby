@@ -1,4 +1,4 @@
-#maze_game by Vincent Gosselin, 2016.
+#maze.rb by Vincent Gosselin, 2016.
 
 class Position
 	attr_accessor :x, :y, :links_to 
