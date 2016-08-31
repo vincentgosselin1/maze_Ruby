@@ -138,6 +138,8 @@ class Maze
 			player.x -= 1 if can_move?("a")
 		when "d"
 			player.x += 1 if can_move?("d")
+		else
+			puts "Invalid command!"	
 		end
 	end
 
@@ -241,6 +243,10 @@ welcome = %{
 puts welcome
 
 level = gets.chop
+until level.to_i > 0 and level.to_i < 4
+	puts "there are no mazes for this level."
+	level = gets.chop
+end
 
 maze = Maze.new(level)
 player = maze.player_start
