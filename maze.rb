@@ -70,12 +70,10 @@ class Maze
 	def initialize(level)
 		@level = level
 		@grid = []
-		build_maze(1)
+		build_maze(level)
 	end
 
 	def build_maze(level)
-		case level
-		when 1
 			#Maze 6 x 5 Being Created here is the map.
 
 			######             s -> start
@@ -85,7 +83,7 @@ class Maze
 			######
 
 			#open the file containing maze.
-			lines = File.readlines('level1.txt')
+			lines = File.readlines("level#{level}.txt")
 
 			#lines looks like :
 			# => ["######\n", "#p####\n", "#.##f#\n", "#....#\n", "######"]
@@ -96,7 +94,6 @@ class Maze
 
 			#let's build the grid of the maze with tiles and block from the lines
 			builder(lines)
-		end
 	end
 
 	def player_start
@@ -242,12 +239,13 @@ welcome = %{
 	}
 
 puts welcome
+
 level = gets.chop
 
 maze = Maze.new(level)
 player = maze.player_start
 puts "welcome in the Dungeon! All you have is this map:"
-puts File.readlines('level1.txt')
+puts File.readlines("level#{level}.txt")
 puts "you can go w, s, a, d"
 while 1
 	input = gets.chop
