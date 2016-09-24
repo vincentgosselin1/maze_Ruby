@@ -1,4 +1,4 @@
-##This is a small maze program that I challenged myself to do in order to test my ruby skills.
+##This is a small maze program that I challenged myself todo in order to test my ruby skills.
 
 Here is a screenshot of the program running. There are currently 3 levels, please see the .txt files.
 
